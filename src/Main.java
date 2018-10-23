@@ -92,6 +92,7 @@ public class Main extends JFrame {
 
             pointList.add(point);
         }
+        //Comment test
         return pointList;
     }
 
