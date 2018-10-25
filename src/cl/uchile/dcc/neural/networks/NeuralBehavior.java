@@ -15,8 +15,6 @@ public abstract class NeuralBehavior {
 
     abstract double feed(List<Integer> inputs);
 
-    abstract void train(List<Point> points);
-
     public List<Double> multList(List<Integer> inputs, List<Double> weights){
         List<Double> pointResult = new ArrayList<>();
         Double element;
