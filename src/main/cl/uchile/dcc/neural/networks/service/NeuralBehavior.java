@@ -1,4 +1,4 @@
-package cl.uchile.dcc.neural.networks;
+package main.cl.uchile.dcc.neural.networks.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +13,9 @@ public abstract class NeuralBehavior {
         this.bias = bias;
     }
 
-    abstract double feed(List<Integer> inputs);
+    abstract double feed(List<Double> inputs);
 
-    public List<Double> multList(List<Integer> inputs, List<Double> weights){
+    public List<Double> multList(List<Double> inputs, List<Double> weights){
         List<Double> pointResult = new ArrayList<>();
         Double element;
 
@@ -28,11 +28,11 @@ public abstract class NeuralBehavior {
     }
 
     public List<Double> getWeights(){
-        return this.weights;
+        return weights;
     }
 
     public double getBias(){
-        return this.bias;
+        return bias;
     }
 
     public void setWeights(List<Double> weights) {

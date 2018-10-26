@@ -1,9 +1,9 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+package main;
 
-import cl.uchile.dcc.neural.networks.PerceptonBuilder;
-import cl.uchile.dcc.neural.networks.Perceptron;
+import main.cl.uchile.dcc.neural.networks.service.PerceptonBuilder;
+import main.cl.uchile.dcc.neural.networks.service.Perceptron;
+
+import java.util.Arrays;
 
 public class Main {
 
@@ -18,15 +18,14 @@ public class Main {
         Perceptron perceptron4 = perceptonBuilder.getNandPerceptron();
         Perceptron perceptron5 = perceptonBuilder.getNandPerceptron();
 
-        Integer x = 1;
-        Integer y = 1;
+        Double x = 1.0;
+        Double y = 1.0;
 
         double resultP1 = perceptron1.feed(Arrays.asList(x, y));
-        double resultP2 = perceptron2.feed(Arrays.asList(x, (int)resultP1));
-        double resultP3 = perceptron3.feed(Arrays.asList((int)resultP1, y));
-        double resultP5 = perceptron5.feed(Arrays.asList((int)resultP2, (int)resultP3));
-
-        double resultP4 = perceptron4.feed(Arrays.asList((int)resultP1, (int)resultP1));
+        double resultP2 = perceptron2.feed(Arrays.asList(resultP1, y));
+        double resultP3 = perceptron3.feed(Arrays.asList(resultP1, x));
+        double resultP5 = perceptron5.feed(Arrays.asList(resultP2, resultP3));
+        double resultP4 = perceptron4.feed(Arrays.asList(resultP1, resultP1));
 
         System.out.println("Inputs: x="+x+", y="+y);
         System.out.println("suma (resultP5) = " + resultP5 + ", carry (resultP4) = " + resultP4);
