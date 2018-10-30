@@ -1,6 +1,7 @@
 package main.cl.uchile.dcc.neural.networks.service;
 
 import main.cl.uchile.dcc.neural.networks.service.NeuralBehavior;
+import main.cl.uchile.dcc.neural.networks.service.dto.Line;
 import main.cl.uchile.dcc.neural.networks.service.dto.Point;
 
 import java.util.List;
@@ -30,8 +31,9 @@ public class Perceptron extends NeuralBehavior {
 
     @Override
     void train() {
-        List<Point> trainingPointList = PointFactory.getRandomPoints();
-        //TODO set classification for training points
+        int lineItersection = 2;
+        int lineSlope = 1;
+        List<Point> trainingPointList = PointFactory.getRandomPoints(new Line(lineItersection, lineSlope));
         //TODO apply training
     }
 
