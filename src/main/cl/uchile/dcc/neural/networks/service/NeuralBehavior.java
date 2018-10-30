@@ -1,6 +1,9 @@
 package main.cl.uchile.dcc.neural.networks.service;
 
+import main.cl.uchile.dcc.neural.networks.service.dto.Point;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public abstract class NeuralBehavior {
@@ -14,12 +17,13 @@ public abstract class NeuralBehavior {
     }
 
     abstract double feed(List<Double> inputs);
+    abstract void train();
 
     public List<Double> multList(List<Double> inputs, List<Double> weights){
         List<Double> pointResult = new ArrayList<>();
         Double element;
 
-        for(int i = 0; (i < inputs.size() && i< weights.size()) ; i++){
+        for(int i = 0; (i < inputs.size() && i < weights.size()); i++){
             element = inputs.get(i) * weights.get(i);
             pointResult.add(element);
         }
