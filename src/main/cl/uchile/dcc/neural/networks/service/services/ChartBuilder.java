@@ -14,4 +14,14 @@ public class ChartBuilder {
         });
     }
 
+    public void showScatterPlotChart(){
+        SwingUtilities.invokeLater(() -> {
+            ScatterPlotChart scatterPlotChart = new ScatterPlotChart("Example Scatter Plot");
+            scatterPlotChart .setSize(800, 400);
+            scatterPlotChart .setLocationRelativeTo(null);
+            scatterPlotChart .setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+            scatterPlotChart .setVisible(true);
+        });
+    }
+
 }

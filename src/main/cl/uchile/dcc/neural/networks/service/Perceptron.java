@@ -1,15 +1,13 @@
 package main.cl.uchile.dcc.neural.networks.service;
 
-import main.cl.uchile.dcc.neural.networks.service.NeuralBehavior;
 import main.cl.uchile.dcc.neural.networks.service.dto.Line;
 import main.cl.uchile.dcc.neural.networks.service.dto.Point;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class Perceptron extends NeuralBehavior {
 
-    double learningRate = 0.1;
+    private double learningRate = 0.1;
 
     public Perceptron(List<Double> weights, double bias) {
         super(weights, bias);
@@ -17,7 +15,6 @@ public class Perceptron extends NeuralBehavior {
 
     /**
      * Decide perceptron's output
-     * @param inputs
      */
     @Override public double feed(List<Double> inputs) {
         List<Double> pointResult = multList(inputs, this.getWeights());
