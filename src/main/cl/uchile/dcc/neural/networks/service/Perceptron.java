@@ -48,6 +48,7 @@ public class Perceptron extends NeuralBehavior {
                 this.getWeights().set(i, newWeight);
             }
 
+            //Adjust bias
             double newBias = this.getBias() + (learningRate * diff);
             this.setBias(newBias);
         });
