@@ -1,5 +1,6 @@
 package main.cl.uchile.dcc.neural.networks.service;
 
+import main.cl.uchile.dcc.neural.networks.service.dto.Line;
 import main.cl.uchile.dcc.neural.networks.service.dto.Point;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public abstract class NeuralBehavior {
     }
 
     abstract double feed(List<Double> inputs);
-    abstract void train();
+    abstract void lineBasedTraining(Line line);
 
     public List<Double> multList(List<Double> inputs, List<Double> weights){
         List<Double> pointResult = new ArrayList<>();

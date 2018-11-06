@@ -24,15 +24,12 @@ public class Perceptron extends NeuralBehavior {
         if(output <= 0){
             return 0;
         }
-
         return 1;
     }
 
     @Override
-    void train() {
-        int lineIntersection = 2;
-        int lineSlope = 1;
-        List<Point> trainingPointList = PointFactory.getRandomPoints(new Line(lineIntersection, lineSlope));
+    public void lineBasedTraining(Line line) {
+        List<Point> trainingPointList = PointFactory.getRandomTrainingPoints(line);
 
         trainingPointList.forEach(pointList -> {
             List<Double> inputs = List.of(pointList.getAbscissa(), pointList.getOrdinate());

@@ -5,23 +5,23 @@ import java.util.List;
 
 public class PerceptonBuilder {
 
-    private List<Double> nandWeights = Arrays.asList(-2.0, -2.0);
-    private List<Double> orWeights = Arrays.asList(7.0, 7.0);
-    private List<Double> andWeights = Arrays.asList(2.0, 2.0);
+    private static List<Double> nandWeights = Arrays.asList(-2.0, -2.0);
+    private static List<Double> orWeights = Arrays.asList(7.0, 7.0);
+    private static List<Double> andWeights = Arrays.asList(2.0, 2.0);
 
-    private int nandBias = 4;
-    private int orBias = -5;
-    private int andBias = -3;
+    private static int nandBias = 4;
+    private static int orBias = -5;
+    private static int andBias = -3;
 
-    public Perceptron getNandPerceptron(){
+    public static Perceptron getNandPerceptron(){
         return new Perceptron(nandWeights, nandBias);
     }
 
-    public Perceptron getOrPerceptron(){
+    public static Perceptron getOrPerceptron(){
         return new Perceptron(orWeights, orBias);
     }
 
-    public Perceptron getAndPerceptron(){
+    public static Perceptron getAndPerceptron(){
         return new Perceptron(andWeights, andBias);
     }
 }
