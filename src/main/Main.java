@@ -8,9 +8,9 @@ public class Main {
     public static void main(String[] args) {
 
         ChartBuilder chartBuilder = new ChartBuilder();
-        chartBuilder.showLineChart();
+        chartBuilder.showClassificationChart();
 
-        chartBuilder.showScatterPlotChart();
+        //chartBuilder.showScatterPlotChart();
     }
 
 }

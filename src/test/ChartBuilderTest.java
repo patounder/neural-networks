@@ -9,7 +9,7 @@ public class ChartBuilderTest {
 
     @Test
     public void ShowLineChart_ShouldRenderLineChart(){
-        chartBuilder.showLineChart();
+        chartBuilder.showClassificationChart();
     }
 
 }

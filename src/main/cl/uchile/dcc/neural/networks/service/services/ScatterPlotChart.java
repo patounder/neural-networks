@@ -27,7 +27,7 @@ public class ScatterPlotChart extends JFrame {
 
         //Changes background color
         XYPlot plot = (XYPlot)chart.getPlot();
-        plot.setBackgroundPaint(new Color(255,228,196));
+        plot.setBackgroundPaint(new Color(129, 255, 217));
 
 
         // Create Panel

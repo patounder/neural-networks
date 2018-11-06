@@ -4,9 +4,9 @@ import javax.swing.*;
 
 public class ChartBuilder {
 
-    public void showLineChart(){
+    public void showClassificationChart(){
         SwingUtilities.invokeLater(() -> {
-            LineChart example = new LineChart("First Line Chart");
+            ClassificationChart example = new ClassificationChart("Classification Chart");
             example.setSize(800, 400);
             example.setLocationRelativeTo(null);
             example.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
