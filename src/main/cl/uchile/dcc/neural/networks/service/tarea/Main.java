@@ -1,4 +1,4 @@
-package main;
+package main.cl.uchile.dcc.neural.networks.service.tarea;
 
 import main.cl.uchile.dcc.neural.networks.service.PerceptonBuilder;
 import main.cl.uchile.dcc.neural.networks.service.Perceptron;
@@ -14,6 +14,8 @@ public class Main {
 
 
     public static void main(String[] args) {
+
+        /*
         Perceptron perceptron = PerceptonBuilder.getNandPerceptron();
 
         Line line = new Line(2, 1);
@@ -28,6 +30,16 @@ public class Main {
 
         ChartBuilder chartBuilder = new ChartBuilder();
         chartBuilder.showClassificationChart(line, points);
+        */
+
+        int totalLayers = 5;
+        int neuronsPerLayer = 5;
+
+        Network neuralNetwork = new Network(totalLayers, neuronsPerLayer);
+        neuralNetwork.training();
+
+
+        System.out.println("Finish training!");
     }
 
 }

@@ -9,7 +9,37 @@ public class Layer {
 
     private LayerType layerType;
     private List<SigmoidNeuron> neurons;
-    private List<NeuronOutput> outputs;
-    //TODO add list inputs to layer then neuron
 
+    public Layer() {
+        super();
+    }
+
+    public Layer(LayerType layerType, List<SigmoidNeuron> neurons) {
+        this.layerType = layerType;
+        this.neurons = neurons;
+    }
+
+    public LayerType getLayerType() {
+        return layerType;
+    }
+
+    public void setLayerType(LayerType layerType) {
+        this.layerType = layerType;
+    }
+
+    public List<SigmoidNeuron> getNeurons() {
+        return neurons;
+    }
+
+    public void setNeurons(List<SigmoidNeuron> neurons) {
+        this.neurons = neurons;
+    }
+
+    @Override
+    public String toString() {
+        return "Layer{" +
+                "layerType=" + layerType +
+                ", neurons=" + neurons +
+                '}';
+    }
 }

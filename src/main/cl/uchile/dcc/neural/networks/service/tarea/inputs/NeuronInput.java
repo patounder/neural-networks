@@ -6,5 +6,6 @@ import java.util.List;
 
 public class NeuronInput {
 
-    private List<SigmoidNeuron> listFrom;
+    private double inputValue;
+    private SigmoidNeuron fromNeuron;
 }
