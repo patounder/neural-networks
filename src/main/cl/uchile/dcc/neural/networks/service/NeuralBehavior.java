@@ -17,8 +17,8 @@ public abstract class NeuralBehavior {
         this.bias = bias;
     }
 
-    abstract double feed(List<Double> inputs);
-    abstract void lineBasedTraining(Line line);
+    protected abstract double feed(List<Double> inputs);
+    protected abstract void lineBasedTraining(Line line);
 
     public List<Double> multList(List<Double> inputs, List<Double> weights){
         List<Double> pointResult = new ArrayList<>();

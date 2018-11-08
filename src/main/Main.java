@@ -14,13 +14,12 @@ public class Main {
 
 
     public static void main(String[] args) {
-
         Perceptron perceptron = PerceptonBuilder.getNandPerceptron();
 
         Line line = new Line(2, 1);
         perceptron.lineBasedTraining(line);
 
-        List<Point> points = PointFactory.getRandomPoints(100);
+        List<Point> points = PointFactory.getRandomPoints(4);
 
         points.forEach( point -> {
             double pointClassification = perceptron.feed(Arrays.asList(point.getAbscissa(), point.getOrdinate()));
@@ -29,7 +28,6 @@ public class Main {
 
         ChartBuilder chartBuilder = new ChartBuilder();
         chartBuilder.showClassificationChart(line, points);
-
     }
 
 }
