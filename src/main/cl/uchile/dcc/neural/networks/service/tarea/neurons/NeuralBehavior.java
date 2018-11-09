@@ -1,4 +1,4 @@
-package main.cl.uchile.dcc.neural.networks.service;
+package main.cl.uchile.dcc.neural.networks.service.tarea.neurons;
 
 import main.cl.uchile.dcc.neural.networks.service.dto.Line;
 import main.cl.uchile.dcc.neural.networks.service.dto.Point;
@@ -17,8 +17,8 @@ public abstract class NeuralBehavior {
         this.bias = bias;
     }
 
-    protected abstract double feed(List<Double> inputs);
-    protected abstract void lineBasedTraining(Line line);
+    public abstract double feed(List<Double> inputs);
+    public abstract void lineBasedTraining(Line line);
 
     public List<Double> multList(List<Double> inputs, List<Double> weights){
         List<Double> pointResult = new ArrayList<>();

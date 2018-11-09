@@ -2,6 +2,7 @@ package main.cl.uchile.dcc.neural.networks.service;
 
 import main.cl.uchile.dcc.neural.networks.service.dto.Line;
 import main.cl.uchile.dcc.neural.networks.service.dto.Point;
+import main.cl.uchile.dcc.neural.networks.service.tarea.neurons.NeuralBehavior;
 
 import java.util.List;
 
