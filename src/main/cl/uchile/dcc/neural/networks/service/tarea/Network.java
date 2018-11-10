@@ -6,6 +6,7 @@ import main.cl.uchile.dcc.neural.networks.service.tarea.layers.TrainingInput;
 import main.cl.uchile.dcc.neural.networks.service.tarea.neurons.SigmoidNeuron;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Network {
@@ -29,17 +30,15 @@ public class Network {
             return;
         }
 
-        TrainingInput trainingInput = new TrainingInput(); //TODO change for original values
-        Layer inputLayer = buildInputLayer(trainingInput.getInputsValues().size());
-
         layerList = new ArrayList<>(this.totalLayers);
+        Layer inputLayer = buildInputLayer();
         layerList.add(inputLayer);
 
         int noHiddenLayersNumber = 2; //One for inputs and one for outputs layers;
         int hiddenLayersNumber = totalLayers - noHiddenLayersNumber;
 
         Layer auxHiddenLayer;
-        for (int i = 1; i < hiddenLayersNumber; i++){
+        for (int i = 1; i <= hiddenLayersNumber; i++){
             auxHiddenLayer = buildHiddenLayer();
             layerList.add(auxHiddenLayer);
         }
@@ -48,11 +47,11 @@ public class Network {
         layerList.add(outputLayer);
     }
 
-    private Layer buildInputLayer(int sizeInput){
+    private Layer buildInputLayer(){
         Layer inputLayer = new Layer();
         inputLayer.setLayerType(LayerType.INPUT);
 
-        List<SigmoidNeuron> neuronList = new ArrayList<>(sizeInput);
+        List<SigmoidNeuron> neuronList = new ArrayList<>();
         inputLayer.setNeurons(neuronList);
         return inputLayer;
     }
@@ -72,8 +71,8 @@ public class Network {
         return outputLayer;
     }
 
-    public void training(TrainingInput trainingInput){
-        feeding(trainingInput);
+    public void training(List<TrainingInput> trainingInputList){
+        trainingInputList.forEach(trainingInput -> feeding(trainingInput));
         //TODO backward propagation
         //TODO update biases y weights
     }
@@ -82,7 +81,7 @@ public class Network {
         //Training first layer
         SigmoidNeuron auxNeuron;
         for(int i = 0; i < trainingInput.getInputsValues().size(); i++){
-            auxNeuron = new SigmoidNeuron(null, 2); //TODO replace weights y bias
+            auxNeuron = new SigmoidNeuron(Arrays.asList(1.0, 0.6), 1); //TODO replace weights y bias
             auxNeuron.setOutput(trainingInput.getInputsValues().get(i));
             this.layerList.get(FIRST_ELEMENT).getNeurons().add(i, auxNeuron);
         }
@@ -96,7 +95,7 @@ public class Network {
         Layer selectedLayer = this.layerList.get(layerIndex);
         List<Double> inputsLayer = getPreviousLayerOutputs(layerIndex);
         selectedLayer.getNeurons().forEach(neuron -> {
-            neuron = new SigmoidNeuron(null, 2); //TODO replace weights y bias
+            neuron = new SigmoidNeuron(Arrays.asList(-2.0, 1.1), 1); //TODO replace weights y bias
             Double output = neuron.feed(inputsLayer);
             neuron.setOutput(output);
         });

@@ -6,7 +6,9 @@ import main.cl.uchile.dcc.neural.networks.service.PointFactory;
 import main.cl.uchile.dcc.neural.networks.service.dto.Line;
 import main.cl.uchile.dcc.neural.networks.service.dto.Point;
 import main.cl.uchile.dcc.neural.networks.service.services.ChartBuilder;
+import main.cl.uchile.dcc.neural.networks.service.tarea.layers.TrainingInput;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -32,12 +34,22 @@ public class Main {
         chartBuilder.showClassificationChart(line, points);
         */
 
-        int totalLayers = 5;
-        int neuronsPerLayer = 5;
+        int totalLayers = 3;
+        int neuronsPerLayer = 2;
+
+        TrainingInput trainingInput1 = new TrainingInput(0, Arrays.asList(0.0,0.0));
+        TrainingInput trainingInput2 = new TrainingInput(1, Arrays.asList(0.0,1.0));
+        TrainingInput trainingInput3 = new TrainingInput(1, Arrays.asList(1.0,0.0));
+        TrainingInput trainingInput4 = new TrainingInput(0, Arrays.asList(1.0,1.0));
+
+        List<TrainingInput> trainingInputList = new ArrayList<>(4);
+        trainingInputList.add(trainingInput1);
+        trainingInputList.add(trainingInput2);
+        trainingInputList.add(trainingInput3);
+        trainingInputList.add(trainingInput4);
 
         Network neuralNetwork = new Network(totalLayers, neuronsPerLayer);
-        neuralNetwork.training(null);
-
+        neuralNetwork.training(trainingInputList);
 
         System.out.println("Finish training!");
     }
