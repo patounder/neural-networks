@@ -36,7 +36,7 @@ public class Main {
         int neuronsPerLayer = 5;
 
         Network neuralNetwork = new Network(totalLayers, neuronsPerLayer);
-        neuralNetwork.training();
+        neuralNetwork.training(null);
 
 
         System.out.println("Finish training!");
