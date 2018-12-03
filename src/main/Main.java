@@ -13,10 +13,13 @@ import java.util.List;
 public class Main {
 
 
+    public static final int INTERSECTION_VALUE = 2;
+    public static final int SLOPE_VALUE = 1;
+
     public static void main(String[] args) {
         Perceptron perceptron = PerceptonBuilder.getNandPerceptron();
 
-        Line line = new Line(2, 1);
+        Line line = new Line(INTERSECTION_VALUE, SLOPE_VALUE);
         perceptron.lineBasedTraining(line);
 
         List<Point> points = PointFactory.getRandomPoints(4);

@@ -53,4 +53,25 @@ public class PerceptronTest {
         assertEquals(andPerceptron.feed(Arrays.asList(INPUT_X_ONE, INPUT_Y_ONE)), ONE_OUTPUT);
 
     }
+
+
+    @Test
+    public void testCharAscii(){
+        String randomWord = generateRandomWordSequence(4, "");
+        System.out.println(randomWord);
+    }
+
+    private String generateRandomWordSequence(int maxLength, String word){
+        //ASCII 97 - 122
+        if(maxLength == 0){
+            return word;
+        } else {
+            char randomCharacter = (char) getRandomIntFromRange(97, 122);
+            return generateRandomWordSequence(maxLength - 1, word.concat(Character.toString(randomCharacter)));
+        }
+    }
+
+    public int getRandomIntFromRange(int from, int to){
+        return (int) (Math.random()*((to - from) + 1)) + from;
+    }
 }
